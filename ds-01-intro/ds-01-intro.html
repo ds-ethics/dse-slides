@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Ethics ✕ Data Science</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Simon Munzert and Johannes Himmelreich" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <link rel="stylesheet" href="../simons-touch.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Ethics ✕ Data Science
+]
+.subtitle[
+## What is data science?
+]
+.author[
+### Simon Munzert and Johannes Himmelreich
+]
+
+---
+
+
+&lt;style type="text/css"&gt;
+@media print { # print out incremental slides; see https://stackoverflow.com/questions/56373198/get-xaringan-incremental-animations-to-print-to-pdf/56374619#56374619
+  .has-continuation {
+    display: block !important;
+  }
+}
+&lt;/style&gt;
+
+
+
+
+# Table of contents
+
+&lt;/br&gt;&lt;/br&gt;
+
+1. [What is data science?](#whatisdatascience)
+
+2. [The data science pipeline](#datasciencepipeline)
+
+3. [Data science for public policy](#science)
+
+4. [Further reading](#furtherreading)
+
+
+---
+class: inverse, center, middle
+name: whatisdatascience
+
+# What is data science?
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+
+---
+# What is data science?
+
+.pull-left[
+## What is data science?
+
+&gt; "Data science is an interdisciplinary academic field that uses statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data." - [Wikipedia](https://en.wikipedia.org/wiki/Data_science)
+
+&gt; "Data science is a concept to unify statistics, data analysis, informatics, and their related methods to understand and analyze actual phenomena with data." - [Chikio Hayashi](https://www.springer.com/book/9784431702085)
+
+Overall, there's **no consensus** - it is a buzzword after all. We're going to carry on with Conway's working definition.
+]
+
+.pull-right[
+## A working definition
+
+&lt;div align="center"&gt;&lt;br&gt;
+&lt;img src="../pics/venn-orig-crop.png" height=400&gt;
+&lt;/div&gt;
+
+`Source` [Drew Conway, 2010](https://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram) (adapted)
+]
+
+
+---
+# Types of data-driven research and their role for policy
+
+.pull-left-small2[
+## 1. Description
+- What is the state of the world?
+- What are the trends over time?
+- What are the differences between groups?
+
+## The value for policy-making
+- At the center of **monitoring**
+- "How many people consume misinformation online?"
+- "How many people are unemployed in a certain district?"
+- "How does the distribution of income vary across educational segments of the population?"
+]
+
+--
+
+.pull-left-small2[
+## 2. Explanation
+- What is the effect of a policy?
+- Does the effect vary across groups?
+- What are the mechanisms behind the effect?
+
+## The value for policy-making
+- At the center of **evaluation**
+- "Did the minimum wage increase lead to a decrease in employment?"
+- "Did the campaign affect the exposure to misinformation differently across groups?"
+- "Why did the intervention not lead to the expected results?"
+]
+
+--
+
+.pull-left-small2[
+## 3. Prediction
+- What is the path of an indicator?
+- (When) will future events happen?
+- What class does this observation most likely belong to?
+
+
+## The value for policy-making
+- At the center of **forecasting** but also **targeting** and **measurement**
+- "Will there be conflict?"
+- "How many people will be unemployed in a certain district next year?"
+- "Which individuals are most likely to be affected by a policy?"
+]
+
+
+
+---
+class: inverse, center, middle
+name: datasciencepipeline
+
+# The data science pipeline
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+
+
+---
+background-image: url("../pics/vintage-pipeline.jpeg")
+background-size: contain
+background-color: #000000
+
+# The data science pipeline
+
+
+---
+# The data science pipeline
+
+.pull-left[
+
+**Preparatory work**
+
+- **Problem definition** predict, infer, describe
+- **Design** conceptualize, build data collection device
+- **Data collection** recruit, collect, monitor
+
+]
+
+---
+# The data science pipeline
+
+.pull-left[
+**Preparatory work**
+
+- **Problem definition** predict, infer, describe
+- **Design** conceptualize, build data collection device
+- **Data collection** recruit, collect, monitor
+
+**Data operation**
+]
+
+.pull-right-center[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/data-science-flow.png" height=200&gt;
+&lt;/div&gt;
+
+`Source` [H. Wickham, M. Çetinkaya-Rundel, G. Gronemund: R for Data Science](https://r4ds.hadley.nz/)
+]
+
+---
+# The data science pipeline
+
+.pull-left[
+**Preparatory work**
+
+  - **Problem definition** predict, infer, describe
+  - **Design** conceptualize, build data collection device
+  - **Data collection** recruit, collect, monitor
+
+**Data operation**
+
+   - **Wrangle**: import, tidy, manipulate
+]
+
+.pull-right-center[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/data-science-wrangle.png" height=200&gt;
+&lt;/div&gt;
+
+`Source` [H. Wickham, M. Çetinkaya-Rundel, G. Gronemund: R for Data Science](https://r4ds.hadley.nz/)
+]
+
+
+---
+# The data science pipeline
+
+.pull-left[
+**Preparatory work**
+
+  - **Problem definition** predict, infer, describe
+  - **Design** conceptualize, build data collection device
+  - **Data collection** recruit, collect, monitor
+
+**Data operation**
+
+   - **Wrangle**: import, tidy, manipulate
+   - **Explore**: visualize, describe, discover
+]
+
+.pull-right-center[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/data-science-explore.png" height=200&gt;
+&lt;/div&gt;
+
+`Source` [H. Wickham, M. Çetinkaya-Rundel, G. Gronemund: R for Data Science](https://r4ds.hadley.nz/)
+]
+
+
+---
+# The data science pipeline
+
+.pull-left[
+**Preparatory work**
+
+  - **Problem definition** predict, infer, describe
+  - **Design** conceptualize, build data collection device
+  - **Data collection** recruit, collect, monitor
+
+**Data operation**
+
+   - **Wrangle**: import, tidy, manipulate
+   - **Explore**: visualize, describe, discover
+   - **Model**: build, test, infer, predict
+]
+
+.pull-right-center[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/data-science-model.png" height=200&gt;
+&lt;/div&gt;
+
+`Source` [H. Wickham, M. Çetinkaya-Rundel, G. Gronemund: R for Data Science](https://r4ds.hadley.nz/)
+]
+
+
+---
+# The data science pipeline
+
+.pull-left[
+**Preparatory work**
+
+  - **Problem definition** predict, infer, describe
+  - **Design** conceptualize, build data collection device
+  - **Data collection** recruit, collect, monitor
+
+**Data operation**
+
+   - **Wrangle**: import, tidy, manipulate
+   - **Explore**: visualize, describe, discover
+   - **Model**: build, test, infer, predict
+
+**Dissemination**
+
+  - **Communicate**: to the public, media, policymakers
+  - **Publish**: journals/proceedings, blogs, software
+  - **Productize**: make usable, robust, scalable
+]
+
+.pull-right-center[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/data-science-communicate.png" height=200&gt;
+&lt;/div&gt;
+
+`Source` [H. Wickham, M. Çetinkaya-Rundel, G. Gronemund: R for Data Science](https://r4ds.hadley.nz/)
+]
+
+
+---
+# The data science pipeline
+
+.pull-left[
+**Preparatory work**
+
+  - **Problem definition** predict, infer, describe
+  - **Design** conceptualize, build data collection device
+  - **Data collection** recruit, collect, monitor
+
+**Data operation**
+
+   - **Wrangle**: import, tidy, manipulate
+   - **Explore**: visualize, describe, discover
+   - **Model**: build, test, infer, predict
+
+**Dissemination**
+
+  - **Communicate**: to the public, media, policymakers
+  - **Publish**: journals/proceedings, blogs, software
+  - **Productize**: make usable, robust, scalable
+
+**Meta skill: programming**
+]
+
+.pull-right-center[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/data-science-program.png" height=200&gt;
+&lt;/div&gt;
+
+`Source` [H. Wickham, M. Çetinkaya-Rundel, G. Gronemund: R for Data Science](https://r4ds.hadley.nz/)
+]
+
+
+---
+class: inverse, center, middle
+name: science
+
+# (Data) science for public policy
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+
+
+---
+background-image: url("../pics/pioneer-railway.jpg")
+background-size: contain
+background-color: #000000
+
+# Some examples of data science research informing policy
+
+
+---
+# The MIT Billion Prices Project
+
+.pull-left[
+&lt;div align="center"&gt;
+&lt;img src="../pics/billion-prices-0.png" height=500&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/billion-prices-1.png" height=500&gt;
+&lt;/div&gt;
+]
+
+&lt;br&gt;
+**See also:** [https://thebillionpricesproject.com/](https://thebillionpricesproject.com/) and [https://www.pricestats.com/](https://www.pricestats.com/)
+
+---
+# The MIT Billion Prices Project
+
+.pull-left[
+&lt;div align="center"&gt;
+&lt;img src="../pics/billion-prices-0.png" height=500&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/billion-prices-2.png" height=500&gt;
+&lt;/div&gt;
+]
+
+&lt;br&gt;
+**See also:** [https://thebillionpricesproject.com/](https://thebillionpricesproject.com/) and [https://www.pricestats.com/](https://www.pricestats.com/)
+
+
+---
+# The COMPAS algorithm to predict criminals' recidivism
+
+.pull-left[
+## Background
+
+- Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) is a decision support tool developed by Northpointe (now Equivant) used by U.S. courts to **assess the likelihood of recidivism**
+- Produced several scales (Pretrial release risk, General recidivism, Violent recidivism) based on factors such as age, criminal history, and substance abuse
+- The algorithm is proprietary and its inner workings are not public
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+`Source` [Practitioner's Guide to COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/compas-practitioner-1.png" width=450&gt;
+&lt;img src="../pics/compas-practitioner-2.png" width=450&gt;
+&lt;img src="../pics/compas-practitioner-3.png" width=450&gt;
+&lt;/div&gt;
+]
+
+
+---
+# The COMPAS algorithm to predict criminals' recidivism
+
+.pull-left[
+## The ProPublica and other investigations
+
+- In 2016, ProPublica published an investigation showing that COMPAS was **biased against African Americans**
+- **Bias:** The algorithm was more likely for African Americans to wrongly predict that defendants would re-offend.
+- **Accuracy:** only 20% of people predicted to commit violent crimes actually went on to do so (in a later study estimated with 65%, still worse than a group of humans with little expertise)
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+`Source` [ProPublica 2016](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/machine-bias-compas.png" width=450&gt;
+&lt;/div&gt;
+]
+
+
+---
+# The COMPAS algorithm to predict criminals' recidivism
+
+.pull-left[
+## The ProPublica and other investigations
+
+- In 2016, ProPublica published an investigation showing that COMPAS was **biased against African Americans**
+- **Bias:** The algorithm was more likely for African Americans to wrongly predict that defendants would re-offend.
+- **Accuracy:** only 20% of people predicted to commit violent crimes actually went on to do so (in a later study estimated with 65%, still worse than a group of humans with little expertise)
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+`Source` [Dressel and Fair, 2018, Science Advances](https://www.science.org/doi/epdf/10.1126/sciadv.aao5580)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/dressel-compas-1.png" width=500&gt;
+&lt;img src="../pics/dressel-compas-2.png" width=385&gt;
+&lt;/div&gt;
+]
+
+
+---
+# The Meta US 2020 Election study
+
+.pull-left-center[
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/facebook-us2020-2.png" width=550&gt;
+&lt;/div&gt;
+]
+
+.pull-right-center[
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/facebook-us2020-4.png" width=550&gt;
+&lt;/div&gt;
+]
+
+---
+# The Meta US 2020 Election study
+
+.pull-left[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+`Source` [Guess et al. 2023, Science](https://www.science.org/doi/epdf/10.1126/science.abp9364)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/facebook-us2020-guess-1.png" width=500&gt;
+&lt;/div&gt;
+]
+
+
+---
+# The Meta US 2020 Election study
+
+.pull-left-small[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+`Source` [Guess et al. 2023, Science](https://www.science.org/doi/epdf/10.1126/science.abp9364)
+]
+
+.pull-right-wide[
+&lt;div align="center"&gt;
+&lt;img src="../pics/facebook-us2020-guess-2.png" width=700&gt;
+&lt;/div&gt;
+]
+
+
+
+---
+class: inverse, center, middle
+name: furtherreading
+
+# Further reading
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+
+
+---
+# Further reading
+
+&lt;div align="center"&gt;
+&lt;img src="../pics/manski-public-policy-uncertain.jpg" height=250&gt;
+&lt;img src="../pics/bookofwhy.jpg" height=250&gt;
+&lt;img src="../pics/everybodylies.jpg" height=250&gt;
+&lt;img src="../pics/everythingisobvious.jpg" height=250&gt;
+&lt;img src="../pics/calling-bullshit.jpeg" height=250&gt;
+&lt;img src="../pics/wilkebook.jpeg" height=250&gt;&lt;br&gt;
+&lt;img src="../pics/bitbybitbook.jpg" height=250&gt;
+&lt;img src="../pics/numbersrule.jpg" height=250&gt;
+&lt;img src="../pics/numbersense.jpg" height=250&gt;
+&lt;img src="../pics/rival-hypothesis-1.png" height=250&gt;
+&lt;img src="../pics/art-of-statistics.jpg" height=250&gt;
+&lt;img src="../pics/aisnakeoil.jpg" height=250&gt;
+&lt;/div&gt;
+
+
+---
+# Further listening
+
+&lt;div align="center"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="../pics/podcast-tech-away.png" height=150&gt;
+&lt;img src="../pics/podcast-ai-breakdown.png" height=150&gt;
+&lt;img src="../pics/podcast-beginners-guide.png" height=150&gt;
+&lt;img src="../pics/podcast-govtech360.png" height=150&gt;
+&lt;img src="../pics/podcast-hdsr.png" height=150&gt;
+&lt;img src="../pics/podcast-data-skeptic.png" height=150&gt;
+&lt;img src="../pics/podcast-more-or-less.jpeg" height=150&gt;
+&lt;br&gt;
+&lt;img src="../pics/podcast-linear-digressions.png" height=150&gt;
+&lt;img src="../pics/podcast-not-so-standard-deviations.png" height=150&gt;
+&lt;img src="../pics/podcast-digital-analytics-power-hour.jpeg" height=150&gt;
+&lt;img src="../pics/podcast-oreilly-datashow.jpeg" height=150&gt;
+&lt;img src="../pics/podcast-banana-data.jpeg" height=150&gt;
+&lt;img src="../pics/podcast-stats-stories.png" height=150&gt;
+&lt;img src="../pics/podcast-talking-machines.png" height=150&gt;
+&lt;/div&gt;
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"hash": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+  .logo {
+    background-image: url("../logos/hertie-maxwell-logos-neg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0.75em;
+    right: 1em;
+    width: 150px;
+    height: 128px;
+    z-index: 0;
+  }
+</style>
+  
+  <script>
+  document
+.querySelectorAll(
+  '.remark-slide-content' +
+    ':not(.title-slide)' +
+    ':not(.inverse)' +
+	
+    // add additional classes to exclude here, e.g.
+  // ':not(.inverse)' +
+    ':not(.hide-logo)'
+)
+.forEach(el => {
+  el.innerHTML += '<div class="logo"></div>';
+});
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
